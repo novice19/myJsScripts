@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Calculate BMI</title>
+    </head>
+
+    <body>
+        <h1>Know your BMI</h1>
+
+        <label for="height">Height in meters: </label>
+        <input type="number" id="height" name="height" placeholder="Enter your height(m)." required>
+        <br><br>
+
+        <label for="weight">Weight in kilograms: </label>
+        <input type="number" id="weight" name="weight" placeholder="Enter your weight(kg)." required>
+        <br><br>
+
+        <input type="button" id="submit" name="submit" value="Calculate BMI" onclick="calculate()">
+        <br><br>
+        
+        <div id="result"></div>
+
+
+        <script>
+            function calculate() {
+
+                let h = document.getElementById("height").value;
+                let w = document.getElementById("weight").value;
+                
+                let bmi = w / (h*h);
+                document.getElementById("result").innerHTML = "Your BMI is Rs. " + bmi.toFixed(1) + " kg / m<sup>2</sup";
+ 
+            }
+        </script>
+
+    </body>
+</html>

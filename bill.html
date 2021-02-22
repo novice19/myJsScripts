@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Electricity Bill</title>
+
+        <script>
+            function calculate() {
+                let unitval = document.getElementById('unit').value;
+                if(isNaN(unitval))
+                    alert('Please enter a valid input for units consumed.');
+                else {
+                    let units = parseInt(unitval);
+                    let bill = 0;
+                    if(units <= 300)
+                        bill = units * 0.5;
+                    else if(units <= 500)
+                        bill = (300 * 0.5) + ((units - 300) * 1);
+                    else if(units <= 1000)
+                        bill = (300 * 0.5) + (200 * 1) + ((units - 500) * 2);
+                    else
+                        bill = (300 * 0.5) + (200 * 1) + (500 * 2) + ((units - 1000) * 3);
+                    document.getElementById('bill').value = bill;
+                }
+            }
+
+        </script>
+    </head>
+
+    <body>
+        <label for="unit">Electricty Reading: </label>
+        <input type="text" id="unit" name="unit" required>
+        <br><br>
+
+        <input type="button" id="calc" name="calc" value="Click" onclick="calculate()">
+        <br><br>
+
+        <label for="bill">Bill Amount: </label>
+        <input type="text" id="bill" name="bill" value=""><span>Rs.</span>
+    </body>
+</html>

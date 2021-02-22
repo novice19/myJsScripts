@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<p id="empdata"></p>
+<script>
+var person=new Object();
+person.firstname="Parna";
+person.subject="Java";
+person.city=["Chennai","kolkata","Hyderabad"]
+person.showdata=function(){return "Name "+person.firstname+" Subject: "+person.subject}
+console.log(person.showdata());
+console.log(person["firstname"]);
+for(var i=0;i<person.city.length;i++)
+ {console.log(person.city[i]);}
+
+var emp={empid:100,
+		name:"parna",
+		salary:10000,
+		printAnnualSal:function(){return "Annual salary"+emp.salary*12}
+};
+console.log(emp.printAnnualSal());
+ document.getElementById("empdata").innerHTML=emp.printAnnualSal();
+ /* console.log(localStorage.getItem("name"));
+ localStorage.setItem("name","julie"); */
+ var str=JSON.stringify(emp);
+ sessionStorage.setItem("e",str);
+ var s=sessionStorage.getItem("e");
+  var obj=JSON.parse(s);
+  console.log(obj.name+" earns "+obj.salary);
+  
+</script>
+
+</body>
+</html>

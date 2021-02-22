@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Favourite Background Colour</title>
+
+        <style>
+            #message {
+                text-align: center;
+                font-weight: bold;
+                font-size: 36px;
+            }
+        </style>
+
+        <script>
+            function changeColour() {
+                let col = document.getElementById('colour');
+                let colval = col.options[col.selectedIndex].value;
+
+                document.getElementById('change').style.backgroundColor = colval;
+                
+                if((colval === 'yellow') || (colval === 'pink') || (colval === 'white'))
+                    document.getElementById('change').style.color = 'black';
+                else
+                    document.getElementById('change').style.color = 'white';
+
+                document.getElementById('message').innerHTML = 'Yayy!';
+                
+                return false;
+            }
+        </script>
+    </head>
+
+    <body id="change">
+
+        <p>Let's change the background to your favourite colour!</p>
+        <br>
+
+        <form onsubmit="return changeColour()">
+            <label for="colour">Select your favourite colour: </label>
+            <select id="colour" name="colour" required>
+                <option value="white">White</option>
+                <option value="yellow">Yellow</option>
+                <option value="orange">Orange</option>
+                <option value="red">Red</option>
+                <option value="pink">Pink</option>
+                <option value="purple">Purple</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+                <option value="grey">Grey</option>
+                <option value="black">Black</option>
+            </select>
+            <br><br>
+
+            <input type="submit" id="submit" name="submit" value="Change colour">
+        </form>
+
+        <div id="message"></div>
+    </body>
+
+</html>

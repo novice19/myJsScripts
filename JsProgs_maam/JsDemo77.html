@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<p id="p1"></p>
+<p id="p2"></p>
+<body>
+  <script>
+     localStorage.setItem("name","Shashwat");
+     var data=localStorage.getItem("name");
+     document.getElementById("p1").innerHTML=data;  
+     sessionStorage.setItem("empid","12345");
+     data=sessionStorage.getItem("empid");
+     document.getElementById("p2").innerHTML=data;  
+  
+  </script>
+
+</body>
+
+</html>

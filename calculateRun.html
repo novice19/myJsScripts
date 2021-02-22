@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Calculate Run Rate</title>
+    </head>
+
+    <body>
+        <h1>Calculate Run Rate</h1>
+
+        <label for="runs">Runs Scored: </label>
+        <input type="number" id="runs" name="runs" placeholder="Enter the no. of runs scored." required>
+        <br><br>
+
+        <label for="overs">Overs Faced: </label>
+        <input type="number" id="overs" name="overs" placeholder="Enter the no. of overs played." required>
+        <br><br>
+
+        <input type="button" id="submit" name="submit" value="Calculate BMI" onclick="calculate()">
+        <br><br>
+        
+        <div id="result"></div>
+
+
+        <script>
+            function calculate() {
+
+                let runs = document.getElementById("runs").value;
+                let overs = document.getElementById("overs").value;
+
+
+                
+                let rate = runs / overs;
+                document.getElementById("result").innerHTML = "The net run rate is: " + rate.toFixed(2) + " ";
+ 
+            }
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>Virtual Calculator</title>
+
+
+        <style>
+            body, html {
+                background: #ECEDEF;
+                margin: 0;
+                padding: 0;
+            }
+ 
+            .container {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: #fff;
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.2);
+                border-radius: 14px;
+                padding-bottom: 20px;
+                width: 320px;
+                
+            }
+
+            .display {
+                width: 100%;
+                height: 60px;
+                padding: 40px 0;
+                background:cornflowerblue;
+                border-top-left-radius: 14px;
+                border-top-right-radius: 14px;
+            }
+
+            .buttons {
+                padding: 20px 20px 0 20px;
+            }
+
+            .row {
+                width: 280px;
+                float: left;
+            }
+
+            input[type=button] {
+                width: 60px;
+                height: 60px;
+                float: left;
+                padding: 0;
+                margin: 5px;
+                box-sizing: border-box;
+                background: #ecedef;
+                border: none;
+                font-size: 30px;
+                line-height: 30px;
+                border-radius: 50%;
+                font-weight: 700;
+                color: #5E5858;
+                cursor: pointer;
+                
+            }
+
+            input[type=text] {
+                width: 270px;
+                height: 60px;
+                float: left;
+                padding: 0;
+                box-sizing: border-box;
+                border: none;
+                background: none;
+                color: #ffffff;
+                text-align: right;
+                font-weight: 700;
+                font-size: 60px;
+                line-height: 60px;
+                margin: 0 25px;
+                
+            }
+
+            .blue {
+                background:cornflowerblue !important;
+                color: #ffffff !important;
+                
+            }
+
+        </style>
+    </head>
+ 
+    <body>
+
+        <div class="container">
+            <form name="form">
+
+                <div class="display">
+                    <input type="text" placeholder="0" name="displayResult" />
+                </div>
+
+                <div class="buttons">
+
+                    <div class="row">
+                        <input type="button" class="blue" value="C" onClick="displayResult.value=0">
+                        <input type="button" class="blue" value="=" onClick="displayResult.value=eval(displayResult.value)" style="float: right;">
+                    </div>
+
+                    <div class="row">
+                        <input type="button" name="bt7" value="7" onClick="calcNumbers(bt7.value)">
+                        <input type="button" name="bt8" value="8" onClick="calcNumbers(bt8.value)">
+                        <input type="button" name="bt9" value="9" onClick="calcNumbers(bt9.value)">
+                        <input type="button" name="add" value="+" onClick="calcNumbers(add.value)">
+                    </div>
+                        
+                    <div class="row">
+                        <input type="button" name="bt4" value="4" onClick="calcNumbers(bt4.value)">
+                        <input type="button" name="bt5" value="5" onClick="calcNumbers(bt5.value)">
+                        <input type="button" name="bt6" value="6" onClick="calcNumbers(bt6.value)">
+                        <input type="button" name="sub" value="-" onClick="calcNumbers(sub.value)">
+                    </div>
+                        
+                    <div class="row">
+                        <input type="button" name="bt1" value="1" onClick="calcNumbers(bt1.value)">
+                        <input type="button" name="bt2" value="2" onClick="calcNumbers(bt2.value)">
+                        <input type="button" name="bt3" value="3" onClick="calcNumbers(bt3.value)">
+                        <input type="button" name="mul" value="*" onClick="calcNumbers(mul.value)">
+                    </div>
+                        
+                    <div class="row">
+                        <input type="button" name="mod" value="%" onClick="calcNumbers(mod.value)">
+                        <input type="button" name="bt0" value="0" onClick="calcNumbers(bt0.value)">
+                        <input type="button" name="btdot" value="." onClick="calcNumbers(btdot.value)">
+                        <input type="button" name="div" value="/" onClick="calcNumbers(div.value)">
+                    </div>
+                    
+                </div>
+            
+            </form>
+        </div>
+
+        
+        <script>
+            function calcNumbers(result) {
+                if(form.displayResult.value==0)
+                    form.displayResult.value=result;
+                else
+                    form.displayResult.value=form.displayResult.value+result;
+            }
+        </script>
+
+    </body>
+</html>

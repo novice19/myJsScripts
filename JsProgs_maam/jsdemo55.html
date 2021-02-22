@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+var obj={empid:100,name:"Rajesh",isboarded:true,languages:["English","Hindi","Marathi"]};
+
+var txt=JSON.stringify(obj);
+console.log(txt);
+var obj2=JSON.parse(txt);
+console.log(obj2.empid);
+console.log(obj2.languages[0])
+localStorage.setItem("name",txt); 
+console.log(localStorage.getItem("name"));
+sessionStorage.setItem("language","Java");
+
+
+</script>
+</body>
+</html>

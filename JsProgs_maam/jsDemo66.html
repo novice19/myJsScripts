@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+ var student={"name":"kbk","rollno":"1234","hobby":["reading","singing","surfing"],
+		 "marks":["78","90","89"],
+		 calculateAvg:function(){
+			 var sum=0;
+			 for(var i=0;i<student.marks.length;i++)
+				 {sum+=Number(student.marks[i]);
+				   console.log(student.marks[i])
+				 }
+			
+			   return (sum/student.marks.length);
+		 }
+			 
+		 };
+ var str=JSON.stringify(student);
+ localStorage.setItem("student",str);
+ console.log(localStorage.getItem("student"));
+ console.log(student.name);
+console.log(student.calculateAvg());
+</script>
+</body>
+</html>

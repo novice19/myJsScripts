@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+function printfullName()
+{/* var n=document.getElementsByName("nm");
+document.getElementById("flname").innerHTML="Your Full Name is :"+n[0].value+" "+n[1].value; */
+	
+var fn=document.getElementsByName("nm")[0].value;
+var ln=document.getElementsByName("nm")[1].value;
+document.getElementById("flname").innerHTML="Your Full Name is :"+fn+" "+ln;
+	}
+
+</script>
+</head>
+<body>
+First Name :<input type="text" id="fn" name="nm"><br/>
+Last Name :<input type="text" id="ln" name="nm"><br/>
+    <input type="button" value="Click" onclick="printfullName()"><br/>
+ <p id="flname"></p>   
+</body>
+</html>

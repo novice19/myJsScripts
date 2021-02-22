@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Calculate EMI</title>
+    </head>
+
+    <body>
+        <h1>Calculate your EMI</h1>
+
+        <label for="loan">Loan Amount in Lakhs: </label>
+        <input type="number" id="loan" name="loan" placeholder="Enter your loan amount in lakhs." required>
+        <br><br>
+
+        <label for="tenure">Select tenure in months: </label>
+        <select id="tenure" name="tenure">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+        <br><br>
+
+        <input type="button" id="submit" name="submit" value="Calculate EMI" onclick="calculate()">
+        <br><br>
+        
+        <div id="result"></div>
+
+
+        <script>
+            function calculate() {
+
+                let rate;
+
+                let loan = parseFloat(document.getElementById("loan").value);
+                if(loan <= 10)
+                    rate = 0.07;
+                else if(loan <= 30)
+                    rate = 0.09;
+                else if(loan <= 50)
+                    rate = 0.12;
+                else 
+                    rate = 0.14;
+
+                let tenure = parseInt(document.getElementById("tenure").value);
+                rate /= 12;
+
+                let exp = Math.pow((1+rate), tenure);
+                let emi = (loan*100000) * rate * (exp / (exp-1));
+
+                document.getElementById("result").innerHTML = "EMI is Rs. " + emi.toFixed(2);
+
+ 
+            }
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Form Validation</title>
+
+        <style>
+            body {
+                padding-left: 50px;
+            }
+
+            p {
+                padding-top: 50px;
+                font-weight: bold;
+                font-size: 24px;
+            }
+
+            .right {
+                text-align: right;
+                font-weight: bold;
+            }
+
+            .left {
+                padding-left: 20px;
+            }
+
+            #submit {
+                font-size: 15px;
+                margin-top: 10px;
+            }
+
+            #efname, #elname, #edob, #ecity, #eemail, #ephone {
+                padding-left: 20px;
+                color: red;
+                font-size: 17px;
+            }
+
+            #message {
+                margin-top: 20px;
+                font-size: 20px;
+                color: cornflowerblue;
+            }
+
+        </style>
+
+        <script src="form.js"></script>
+    </head>
+
+    <body>
+        <p>Enter your details and click on submit:</p>
+
+        <form onsubmit="return validate()">
+            <table>
+
+                <tr>
+                    <td class="right"><label for="fname">First Name: </label></td>
+                    <td class="left"><input type="text" id="fname" name="fname" onblur="valFname()" onkeypress="return onlyAlpha(event)" autofocus><span id="efname"></span></td>
+                </tr>
+
+                <tr>
+                    <td class="right"><label for="lname">Last Name: </label></td>
+                    <td class="left"><input type="text" id="lname" name="lname" onblur="valLname()" onkeypress="return onlyAlpha(event)"><span id="elname"></span></td>
+                </tr>
+
+                <tr>
+                    <td class="right"><label for="hobby">Hobby: </label></td>
+                    <td class="left">
+                        <select id="hobby">
+                            <option value="reading">Reading</option>
+                            <option value="music">Music</option>
+                            <option value="baking">Baking</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="right"><label for="dob">Date of Birth: </label></td>
+                    <td class="left"><input type="date" id="dob" name="dob" max="1999-12-31" onblur="valDob()"><span id="edob"></span></td>
+                </tr>
+
+                <tr>
+                    <td class="right"><label for="city">City Code: </label></td>
+                    <td class="left"><input type="text" id="city" name="city" onblur="valCity()"><span id="ecity"></span></td>
+                </tr>
+
+                <tr>
+                    <td class="right"><label for="email">Email: </label></td>
+                    <td class="left"><input type="text" id="email" name="email" onblur="valEmail()"><span id="eemail"></span></td>
+                </tr>
+
+                <tr>
+                    <td class="right"><label for="phone">Phone: </label></td>
+                    <td class="left"><input type="number" id="phone" name="phone" onblur="valPhone()"><span id="ephone"></span></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td class="left"><input type="submit" id="submit" name="submit" value="Submit"></td>
+                </tr>
+
+            </table>
+        </form>
+
+        <div id="message"></div>
+
+    </body>
+
+</html>

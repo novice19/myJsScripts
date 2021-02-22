@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+ <script>
+      function findSum()
+      {var x=document.getElementById('num1').value;
+       var y=document.getElementById('num2').value;
+       var a=parseInt(x);
+       var b=parseInt(y);
+       var sum=a+b;
+      // document.getElementById('sum').value=sum;
+    	  document.getElementById('s').innerHTML=sum
+      }
+      
+     /*  document.getElementById("p1").innerHTML="hELLO";  */
+    </script>
+</head>
+<body>
+Number1 :<input type="text" id="num1"><br/>
+Number2 :<input type="text" id="num2"><br/>
+    <input type="button" value="Find Sum" onclick="findSum()"><br/>
+Sum :<!-- <input type="text" id="sum"><br/>   -->  
+<span id="s"></span>
+    
+    
+
+   
+</body>
+</html>

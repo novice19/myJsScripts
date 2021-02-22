@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Calculator</title>
+
+        <style>
+            #heading {
+                height: 10%;
+                width: 35%;
+                background-color: burlywood;
+                padding: 30px 0px 30px 0px;
+                text-align: center;
+            }
+
+            #result {
+                height: 35%;
+                width: 35%;
+                background-color: darkgrey;
+                padding: 100px 0px 100px 0px;
+                text-align: center;
+                font-weight: bold;
+                font-size: 20px;
+            }
+
+            #pad {
+                height: 55%;
+                width: 35%;
+                background-color: darkcyan;
+                padding: 200px 0px 200px 0px;
+                text-align: center;
+                font-weight: bold;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1 id="heading">Your Virtual Calculator</h1>
+        <div id="result"></div>
+
+        <div id="pad">
+            <label for="m">First Number: </label>
+            <input type="number" id="m" name="m" placeholder="Enter first operand" required>
+            <br><br>
+
+            <label for="n">Second Number: </label>
+            <input type="number" id="n" name="n" placeholder="Enter second operand" required>
+            <br><br>
+            
+            Click on the operator: <br>
+            <input type="button" id="add" name="add" value="+" onclick="add()">
+            <input type="button" id="subtact" name="subtract" value="-" onclick="subtract()">
+            <input type="button" id="multiply" name="multiply" value="*" onclick="multiply()">
+            <input type="button" id="division" name="division" value="/" onclick="division()">
+            <input type="button" id="modulus" name="modulus" value="%" onclick="modulus()">
+        </div>
+
+
+        <script>
+
+            function add() {
+                let m1 = parseInt(document.getElementById("m").value);
+                let n1 = parseInt(document.getElementById("n").value);
+                let res1 = m1 + n1;
+                document.getElementById("result").innerHTML = res1;
+            }
+
+            function subtract() {
+                let m2 = parseInt(document.getElementById("m").value);
+                let n2 = parseInt(document.getElementById("n").value);
+                let res2 = m2 - n2;
+                document.getElementById("result").innerHTML = res2;
+            }
+
+            function multiply() {
+                let m3 = parseInt(document.getElementById("m").value);
+                let n3 = parseInt(document.getElementById("n").value);
+                let res3 = m3 * n3;
+                document.getElementById("result").innerHTML = res3;
+            }
+
+            function division() {
+                let m4 = parseInt(document.getElementById("m").value);
+                let n4 = parseInt(document.getElementById("n").value);
+                let res4 = m4 / n4;
+                document.getElementById("result").innerHTML = res4;
+            }
+
+            function modulus() {
+                let m5 = parseInt(document.getElementById("m").value);
+                let n5 = parseInt(document.getElementById("n").value);
+                let res5 = m5 % n5;
+                document.getElementById("result").innerHTML = res5;
+            }
+
+
+
+        </script>
+
+    </body>
+</html>

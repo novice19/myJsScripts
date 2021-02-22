@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript" src="page18validate.js"></script>
+</head>
+<body>
+<h1 style="text-align: center"> REGISTRATION FORM </h1>           
+<form name="RegForm"  onsubmit="return false" method="post">  
+      
+    <p>Name: <input type="text" size=65 name="Name" onKeyPress="return ValidateAlpha(event);"> <br>        
+    <p> Address: <input type="text" size=65 name="Address" onfocus="validate()">  </p><br> 
+    <p>E-mail Address: <input type="text" size=65 name="EMail"  >  </p><br> 
+     <p>Password: <input type="text" size=65 name="Password" onfocus="validateEmail()"> </p><br> 
+    <p>Telephone: <input type="text" size=65 name="Telephone"> </p><br>   
+           
+    <p>SELECT YOUR COURSE    
+        <select type="text" value="" name="Subject"> 
+            <option>BTECH</option> 
+            <option>BBA</option> 
+            <option>BCA</option> 
+            <option>B.COM</option> 
+            <option>GEEKFORGEEKS</option> 
+        </select></p><br><br> 
+    <p>Comments:  <textarea cols="55" name="Comment">  </textarea></p> 
+    <p><input type="submit" value="send" name="Submit">      
+        <input type="reset" value="Reset" name="Reset">   
+    </p>          
+</form>
+</body>
+</html>
